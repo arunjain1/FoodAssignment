@@ -5,29 +5,11 @@ import Footer from '../../components/Footer/Footer';
 import "./Categories.css";
 import Loader from '../../components/Loader/Loader';
 import NotFound from '../../components/NotFound/NotFound';
+import useMeal from '../../customHook/useMeal';
 function Categories() {
-  const [mealList,setMealList] = useState([]);
-  const [loading,setLoading] = useState(true);
-  const [error,setError] = useState(false);
   const { selectedCategory  } = useContext(StoreContext);
-  
-    useEffect(()=>{
-      const fetchMeals = async () => {
-        try {
-          const response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${selectedCategory}`);
-          const data = await response.json();
-          console.log("meal",data);
-          setMealList([data]);
-        } catch (error) {
-          setError(error);
-        }
-        finally{
-          setLoading(false);
-        }
-      };
-  
-      fetchMeals();
-    },[]);
+  const { loading, error, mealList } = useMeal("https://www.themealdb.com/api/json/v1/1/filter.php",selectedCategory);
+    
     console.log("HI",mealList?.meals);
     if(loading){
       return(

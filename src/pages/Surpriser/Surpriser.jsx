@@ -2,30 +2,11 @@ import React, { useEffect, useState } from 'react'
 import Loader from '../../components/Loader/Loader';
 import NotFound from '../../components/NotFound/NotFound';
 import "./Surpriser.css"
+import useMeal from '../../customHook/useMeal';
 
 function Surpriser() {
-  const [meal,setMeal] = useState([]);
-  const [loading,setLoading] = useState(true);
-  const [error,setError] = useState(false);
-  
-    useEffect(()=>{
-      const fetchMeals = async () => {
-        try {
-          const response = await fetch(`https://www.themealdb.com/api/json/v1/1/random.php`);
-          const data = await response.json();
-          console.log("meal",data);
-          setMeal([data.meals[0]]);
-        } catch (error) {
-          setError(error);
-        }
-        finally{
-          setLoading(false);
-        }
-      };
-  
-      fetchMeals();
-    },[]);
-    console.log("HI",meal);
+  const { loading, error, mealList } = useMeal("https://www.themealdb.com/api/json/v1/1/random.php","");
+    console.log("HI",mealList);
     if(loading){
       return(
           <Loader/>
@@ -37,11 +18,11 @@ function Surpriser() {
       )
     }
   return (
-      meal.length!==0?<div className="card">
-        <img src={meal[0].strMealThumb} alt={"img"} className="card-image" />
+      mealList.length!==0?<div className="card">
+        <img src={mealList[0].meals[0].strMealThumb} alt={"img"} className="card-image" />
         <div className="card-content">
-          <h2 className="card-title">{meal[0].strMeal}</h2>
-          <p className="card-description">{meal[0].strInstructions}</p>
+          <h2 className="card-title">{mealList[0].meals[0].strMeal}</h2>
+          <p className="card-description">{mealList[0].meals[0].strInstructions}</p>
         </div>
       </div>:null
   )
