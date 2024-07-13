@@ -1,0 +1,186 @@
+/* .sidePanel_container{
+    position : absolute;
+    z-index: 100;
+    padding : 12px;
+    margin : 4px;
+    height: 100%;
+    width : 30%;
+    background-color: #9c88ff;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+} */
+
+:root {
+    --background: #9c88ff;
+    --navbar-width: 256px;
+    --navbar-width-min: 80px;
+    --navbar-dark-primary: #18283b;
+    --navbar-dark-secondary: #2c3e50;
+    --navbar-light-primary: #f5f6fa;
+    --navbar-light-secondary: #b4bfcd;
+    --navbar-dark-primaryhover: #7f8b9a;
+  }
+  
+  
+ 
+  
+  #nav-bar {
+    position: absolute;
+    left :9%;
+    height: calc(89vh);
+    background: var(--navbar-dark-primary);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    color: var(--navbar-light-primary);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    overflow: hidden;
+    user-select: none;
+    z-index: 100;
+  }
+  #nav-bar hr {
+    margin: 0;
+    position: relative;
+    left: 16px;
+    width: calc(100% - 32px);
+    border: none;
+    border-top: solid 1px var(--navbar-dark-secondary);
+  }
+ 
+  
+  
+  
+  #nav-header hr {
+    position: absolute;
+    bottom: 0;
+  }
+  
+  #nav-title {
+    font-size: 1.5rem;
+    transition: opacity 1s;
+  }
+  
+ 
+  
+  #nav-content {
+    margin: -16px 0;
+    padding: 16px 0;
+    position: relative;
+    flex: 1;
+    width: var(--navbar-width);
+    background: var(--navbar-dark-primary);
+    box-shadow: 0 0 0 16px var(--navbar-dark-primary);
+    direction: rtl;
+    overflow-x: hidden;
+    transition: width 0.2s;
+  }
+  #nav-content::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  #nav-content::-webkit-scrollbar-thumb {
+    border-radius: 99px;
+    background-color: #D62929;
+  }
+  #nav-content::-webkit-scrollbar-button {
+    height: 16px;
+  }
+  
+  #nav-content-highlight {
+    position: absolute;
+    left: 16px;
+    top: -70px;
+    width: calc(100% - 16px);
+    height: 54px;
+    background: var(--background);
+    background-attachment: fixed;
+    border-radius: 16px 0 0 16px;
+    transition: top 0.2s;
+  }
+  #nav-content-highlight:before, #nav-content-highlight:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 100%;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    box-shadow: 16px 16px var(--background);
+  }
+  #nav-content-highlight:after {
+    top: 100%;
+    box-shadow: 16px -16px var(--background);
+  }
+  
+  .nav-button {
+    position: relative;
+    margin-left: 16px;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    color: var(--navbar-light-secondary);
+    direction: ltr;
+    cursor: pointer;
+    z-index: 1;
+    transition: color 0.2s;
+  }
+  .nav-button span {
+    transition: opacity 1s;
+  }
+  .nav-button .fas {
+    transition: min-width 0.2s;
+  }
+  .nav-button:nth-of-type(1):hover {
+    color: var(--navbar-dark-primaryhover);
+  }
+  .nav-button:nth-of-type(1):hover ~ #nav-content-highlight {
+    top: 16px;
+  }
+  .nav-button:nth-of-type(2):hover {
+    color: var(--navbar-dark-primaryhover);
+  }
+  .nav-button:nth-of-type(2):hover ~ #nav-content-highlight {
+    top: 70px;
+  }
+  .nav-button:nth-of-type(3):hover {
+    color: var(--navbar-dark-primaryhover);
+  }
+  .nav-button:nth-of-type(3):hover ~ #nav-content-highlight {
+    top: 124px;
+  }
+  .nav-button:nth-of-type(4):hover {
+    color: var(--navbar-dark-primaryhover);
+  }
+  .nav-button:nth-of-type(4):hover ~ #nav-content-highlight {
+    top: 178px;
+  }
+  .nav-button:nth-of-type(5):hover {
+    color: var(--navbar-dark-primaryhover);
+  }
+  .nav-button:nth-of-type(5):hover ~ #nav-content-highlight {
+    top: 232px;
+  }
+  .nav-button:nth-of-type(6):hover {
+    color: var(--navbar-dark-primaryhover);
+  }
+  .nav-button:nth-of-type(6):hover ~ #nav-content-highlight {
+    top: 286px;
+  }
+  .nav-button:nth-of-type(7):hover {
+    color: var(--navbar-dark-primaryhover);
+  }
+  .nav-button:nth-of-type(7):hover ~ #nav-content-highlight {
+    top: 340px;
+  }
+  .nav-button:nth-of-type(8):hover {
+    color: var(--navbar-dark-primaryhover);
+  }
+  .nav-button:nth-of-type(8):hover ~ #nav-content-highlight {
+    top: 394px;
+  }
+  
+  #nav-bar .fas {
+    min-width: 3rem;
+    text-align: center;
+  }
+  
+  

@@ -1,0 +1,50 @@
+/* Center the image and text */
+.nothing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh; /* Adjust based on your design */
+    width: 100vw; /* Full viewport width */
+    margin-top: 20px; /* Space between image and text */
+  }
+  
+  /* Style the image */
+  .nothing_img {
+    max-width: 80%; /* Max width of 80% of the viewport width */
+    max-height: 50vh; /* Max height of 50% of the viewport height */
+    width: auto; /* Maintain aspect ratio */
+    height: auto; /* Maintain aspect ratio */
+  }
+  
+  /* Style the text */
+  .nothing_text {
+    text-align: center;
+    font-size: 1.5em; /* Responsive font size */
+    margin: 20px auto; /* Center the text with margin */
+    color: #333; /* Text color */
+    max-width: 90%; /* Ensures the text doesn't overflow on small screens */
+  }
+  
+
+  @media (max-width: 768px) {
+    .nothing_img {
+      max-width: 90%; 
+      max-height: 40vh; 
+    }
+  
+    .nothing_text {
+      font-size: 1.2em; 
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .nothing_img {
+      max-width: 100%; 
+      max-height: 30vh; 
+    }
+  
+    .nothing_text {
+      font-size: 1em; 
+    }
+  }
+  
